@@ -1,0 +1,447 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D09F7619-EA24-4A4D-AD69-6E821B234B6A}</ProjectGuid>
+    <!-- Web Application flavour + Visual Basic project type. -->
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>TutorConnect</RootNamespace>
+    <AssemblyName>TutorConnect</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <MyType>Custom</MyType>
+    <!-- Project-level defaults required by the coding standard. Option Strict On is
+         deliberate: it is the whole reason for choosing VB.NET carefully here. -->
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44306</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>TutorConnect.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>TutorConnect.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Text" />
+    <Import Include="System.Threading.Tasks" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.HtmlControls" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <!--
+      These compile into TutorConnect.dll. They must stay Build Action = Compile and
+      must never be deployed as Content: ASP.NET also compiles a deployed App_Code
+      folder at run time, which would define every type twice.
+    -->
+    <Compile Include="App_Code\Enums\Enums.vb" />
+    <Compile Include="App_Code\Utilities\EnumHelper.vb" />
+    <Compile Include="App_Code\Utilities\ScheduleChangeReasons.vb" />
+    <Compile Include="App_Code\Models\Identity.vb" />
+    <Compile Include="App_Code\Models\Catalogue.vb" />
+    <Compile Include="App_Code\Models\Scheduling.vb" />
+    <Compile Include="App_Code\Models\Feedback.vb" />
+    <Compile Include="App_Code\Data\DatabaseHelper.vb" />
+    <Compile Include="App_Code\Data\UserRepository.vb" />
+    <Compile Include="App_Code\Data\SubjectRepository.vb" />
+    <Compile Include="App_Code\Data\TutorRepository.vb" />
+    <Compile Include="App_Code\Data\RequestRepository.vb" />
+    <Compile Include="App_Code\Data\BookingRepository.vb" />
+    <Compile Include="App_Code\Data\ReviewRepository.vb" />
+    <Compile Include="App_Code\Data\NotificationRepository.vb" />
+    <Compile Include="App_Code\Data\AuditRepository.vb" />
+    <Compile Include="App_Code\Data\PostponementRepository.vb" />
+    <Compile Include="App_Code\Security\PasswordHelper.vb" />
+    <Compile Include="App_Code\Security\RoleHelper.vb" />
+    <Compile Include="App_Code\Validation\UserValidator.vb" />
+    <Compile Include="App_Code\Validation\SubjectValidator.vb" />
+    <Compile Include="App_Code\Security\BasePage.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Global.asax.vb">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPages\Auth.Master.vb">
+      <DependentUpon>Auth.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.vb">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Setup.aspx.vb">
+      <DependentUpon>Setup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.vb">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ForgotPassword.aspx.vb">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AlertMessage.ascx.vb">
+      <DependentUpon>AlertMessage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Utilities\Icons.vb" />
+    <Compile Include="App_Code\Data\StatisticsRepository.vb" />
+    <Compile Include="Controls\NavigationSidebar.ascx.vb">
+      <DependentUpon>NavigationSidebar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\TopHeader.ascx.vb">
+      <DependentUpon>TopHeader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\DashboardCard.ascx.vb">
+      <DependentUpon>DashboardCard.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\StatusBadge.ascx.vb">
+      <DependentUpon>StatusBadge.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\AppMasterBase.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Student.Master.vb">
+      <DependentUpon>Student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Tutor.Master.vb">
+      <DependentUpon>Tutor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPages\Admin.Master.vb">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.aspx.vb">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Logout.aspx.vb">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Error404.aspx.vb">
+      <DependentUpon>Error404.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPages\Error500.aspx.vb">
+      <DependentUpon>Error500.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Services\ServiceResult.vb" />
+    <Compile Include="App_Code\Services\Interfaces.vb" />
+    <Compile Include="App_Code\Services\AuthenticationService.vb" />
+    <Compile Include="App_Code\Validation\BookingValidator.vb" />
+    <Compile Include="App_Code\Validation\RequestValidator.vb" />
+    <Compile Include="App_Code\Validation\ReviewValidator.vb" />
+    <Compile Include="App_Code\Services\NotificationService.vb" />
+    <Compile Include="App_Code\Services\StudentService.vb" />
+    <Compile Include="App_Code\Services\TutorSearchService.vb" />
+    <Compile Include="App_Code\Services\RequestService.vb" />
+    <Compile Include="App_Code\Services\ReviewService.vb" />
+    <Compile Include="App_Code\Services\BookingService.vb" />
+    <Compile Include="App_Code\Security\RolePageBase.vb">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Profile\MyProfile.aspx.vb">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Subjects\MySubjects.aspx.vb">
+      <DependentUpon>MySubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Tutors\FindTutor.aspx.vb">
+      <DependentUpon>FindTutor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Tutors\TutorDetails.aspx.vb">
+      <DependentUpon>TutorDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Requests\RequestSession.aspx.vb">
+      <DependentUpon>RequestSession.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Requests\MyRequests.aspx.vb">
+      <DependentUpon>MyRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Bookings\MyBookings.aspx.vb">
+      <DependentUpon>MyBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Bookings\BookingDetails.aspx.vb">
+      <DependentUpon>BookingDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Reviews\WriteReview.aspx.vb">
+      <DependentUpon>WriteReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\Reviews\MyReviews.aspx.vb">
+      <DependentUpon>MyReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Services\AvailabilityService.vb" />
+    <Compile Include="App_Code\Services\TutorService.vb" />
+    <Compile Include="Tutor\Profile\MyProfile.aspx.vb">
+      <DependentUpon>MyProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\Subjects\MySubjects.aspx.vb">
+      <DependentUpon>MySubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\Availability\MyAvailability.aspx.vb">
+      <DependentUpon>MyAvailability.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\Requests\StudentRequests.aspx.vb">
+      <DependentUpon>StudentRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\Sessions\MySessions.aspx.vb">
+      <DependentUpon>MySessions.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Utilities\ErrorLogger.vb" />
+    <Compile Include="Notifications\Index.aspx.vb">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tutor\Sessions\SessionDetails.aspx.vb">
+      <DependentUpon>SessionDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Services\AdminService.vb" />
+    <Compile Include="App_Code\Services\AuditService.vb" />
+    <Compile Include="App_Code\Services\SubjectCatalogueService.vb" />
+    <Compile Include="App_Code\Services\PostponementService.vb" />
+    <Compile Include="Admin\Users\ManageUsers.aspx.vb">
+      <DependentUpon>ManageUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\AddAdministrator.aspx.vb">
+      <DependentUpon>AddAdministrator.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Subjects\ManageSubjects.aspx.vb">
+      <DependentUpon>ManageSubjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Bookings\ManageBookings.aspx.vb">
+      <DependentUpon>ManageBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Audit\AuditLog.aspx.vb">
+      <DependentUpon>AuditLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Reviews\ManageReviews.aspx.vb">
+      <DependentUpon>ManageReviews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="App_Code\Security\RateLimiter.vb" />
+    <Compile Include="App_Data\Seed\SeedRunner.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="MasterPages\Auth.Master" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Setup.aspx" />
+    <Content Include="Controls\NavigationSidebar.ascx" />
+    <Content Include="Controls\TopHeader.ascx" />
+    <Content Include="Controls\DashboardCard.ascx" />
+    <Content Include="Controls\StatusBadge.ascx" />
+    <Content Include="MasterPages\Student.Master" />
+    <Content Include="MasterPages\Tutor.Master" />
+    <Content Include="MasterPages\Admin.Master" />
+    <Content Include="Student\Dashboard.aspx" />
+    <Content Include="Tutor\Dashboard.aspx" />
+    <Content Include="Admin\Dashboard.aspx" />
+    <Content Include="Account\Logout.aspx" />
+    <Content Include="ErrorPages\Error404.aspx" />
+    <Content Include="ErrorPages\Error500.aspx" />
+    <Content Include="Content\css\site.css" />
+    <Content Include="Content\css\sidebar.css" />
+    <Content Include="Content\css\cards.css" />
+    <Content Include="Content\css\badges.css" />
+    <Content Include="Content\css\tables.css" />
+    <Content Include="Content\css\forms.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\errors.css" />
+    <Content Include="Scripts\sidebar.js" />
+    <Content Include="Student\Profile\MyProfile.aspx" />
+    <Content Include="Student\Subjects\MySubjects.aspx" />
+    <Content Include="Student\Tutors\FindTutor.aspx" />
+    <Content Include="Student\Tutors\TutorDetails.aspx" />
+    <Content Include="Student\Requests\RequestSession.aspx" />
+    <Content Include="Student\Requests\MyRequests.aspx" />
+    <Content Include="Student\Bookings\MyBookings.aspx" />
+    <Content Include="Student\Bookings\BookingDetails.aspx" />
+    <Content Include="Student\Reviews\WriteReview.aspx" />
+    <Content Include="Student\Reviews\MyReviews.aspx" />
+    <Content Include="Content\css\reviews.css" />
+    <Content Include="Scripts\reviews.js" />
+    <Content Include="Tutor\Profile\MyProfile.aspx" />
+    <Content Include="Tutor\Subjects\MySubjects.aspx" />
+    <Content Include="Tutor\Availability\MyAvailability.aspx" />
+    <Content Include="Tutor\Requests\StudentRequests.aspx" />
+    <Content Include="Tutor\Sessions\MySessions.aspx" />
+    <Content Include="Notifications\Index.aspx" />
+    <Content Include="Tutor\Sessions\SessionDetails.aspx" />
+    <Content Include="Admin\Users\ManageUsers.aspx" />
+    <Content Include="Admin\Users\AddAdministrator.aspx" />
+    <Content Include="Admin\Subjects\ManageSubjects.aspx" />
+    <Content Include="Admin\Bookings\ManageBookings.aspx" />
+    <Content Include="Admin\Reviews\ManageReviews.aspx" />
+    <Content Include="Admin\Audit\AuditLog.aspx" />
+    <Content Include="Content\css\print.css" />
+    <Content Include="Scripts\site.js" />
+    <Content Include="Controls\AlertMessage.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\ForgotPassword.aspx" />
+    <Content Include="Content\themes\colors.css" />
+    <Content Include="Content\themes\typography.css" />
+    <Content Include="Content\css\auth.css" />
+    <Content Include="Scripts\password-toggle.js" />
+    <Content Include="Scripts\auth.js" />
+    <Content Include="Web.config" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\auth\login-background.jpg" />
+    <Content Include="Images\auth\register-background.jpg" />
+    <Content Include="Images\branding\tutorconnect-logo.png" />
+    <Content Include="Images\branding\tutorconnect-logo-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App_Data\Scripts\01_CreateSchema.sql" />
+    <None Include="App_Data\Scripts\02_SeedLookups.sql" />
+    <None Include="App_Data\local.settings.config.sample" />
+    <None Include=".gitignore" />
+    <None Include="Documentation\DatabaseDesign.md" />
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>53983</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44306/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+</Project>
