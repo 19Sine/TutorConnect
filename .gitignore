@@ -1,0 +1,21 @@
+# Local, machine-specific settings. Holds the development seed password (D-07).
+# The .sample template beside it IS committed; this file never is.
+App_Data/local.settings.config
+
+# Runtime fault log written by ErrorLogger. Diagnostic output, not source.
+App_Data/Logs/
+
+# Build output
+bin/
+obj/
+*.dll
+*.pdb
+*.xml
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# NuGet packages restored on build
+packages/
